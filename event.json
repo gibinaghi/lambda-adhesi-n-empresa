@@ -1,0 +1,9 @@
+{
+  "body": {
+    "nombre": "Empresa Test Lambda SA",
+    "cuit": "20123456781", 
+    "tipo": "PYME",
+    "fecha_adhesion": "2022-01-01",
+    "activa": true
+  }
+}

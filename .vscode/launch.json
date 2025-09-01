@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Lambda ES Module",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm",
+        "--no-warnings"
+      ],
+      "program": "${workspaceFolder}/src/main.ts",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      }
+    },
+  ]
+}

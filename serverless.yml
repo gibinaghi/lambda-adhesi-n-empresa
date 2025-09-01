@@ -1,0 +1,32 @@
+service: lambda-gestion-empresas
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    DB_HOST: ${env:DB_HOST, 'localhost'}
+    DB_PORT: ${env:DB_PORT, '5432'}
+    DB_USER: ${env:DB_USER, 'postgres'}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME, 'gestion-empresa'}
+    AWS_REGION: ${env.REGION, 'us-east-1'}
+
+  # IAM permissions para Secrets Manager (usar datos en Secrets Manager)
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - secretsmanager:GetSecretValue
+      Resource: "*"
+
+functions:
+ adhesionEmpresa:
+    name: ${env:ENV}-adhesionEmpresa
+    handler: handler.handler
+    url: true  # Para url function
+
+package:
+  patterns:
+    - "!**/*"
+    - "dist/**"
+    - "node_modules/**"
