@@ -1,4 +1,4 @@
-# Serverless Framework AWS Python
+# Serverless Framework
 
 ## Deployment
 
@@ -11,12 +11,12 @@ serverless deploy
 Luego verá un mensaje similiar al siguiente:
 
 ```
-Deploying "aws-python" to stage "dev" (us-east-1)
+Deploying "..." to stage "dev" (us-east-1)
 
-✔ Service deployed to stack aws-python-dev (90s)
+✔ Service deployed to stack .... (90s)
 
 functions:
-  hello: aws-python-dev-hello (1.9 kB)
+  hello: dev-adhesionEmpresa  (1.9 kB)
 ```
 
 ## Invocation
@@ -99,7 +99,7 @@ Esta Lambda puede integrarse con la API principal de empresas como microservicio
 
 Opciones de integración:
 
-API Gateway → Lambda → PostgreSQL (se podría utulizar también RDS).
+API Gateway → Lambda → PostgreSQL (se podría utilizar también RDS).
 
 
 #### Flujo de integración
@@ -121,3 +121,4 @@ Procesa el evento recibido, valida los datos de la empresa y decide si son corre
 PostgreSQL / Amazon RDS:
 
 Se puede reutilizar la misma BD (PostgreSQL). Esto asegura que la información de adhesiones esté centralizada con las transferencias.
+
